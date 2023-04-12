@@ -1,0 +1,35 @@
+body{
+  font-family: Arial;
+}
+
+button{
+  cursor: pointer;
+}
+
+.add{
+  background-color: yellow;
+  border-style: solid;
+  transition: background-color 0.15s;
+}
+
+.buy{
+  background-color: orange;
+  border-style: solid;
+  transition: background-color 0.15s;
+}
+
+.add:hover{
+  background-color: rgb(230,230,0);
+}
+
+.add:active{
+  background-color: rgb(200,200,0);
+}
+
+.buy:hover{
+  background-color: rgb(230, 135, 0);
+}
+
+.buy:active{
+  background-color: rgb(200, 105, 0);
+}
