@@ -70,18 +70,25 @@
       */
 
 
-      const result = 0 ? 'truthy' : 'falsy'; //ternariy operator (?)
+      const result = 0 ? 'truthy' : 'falsy'; //ternary operator (?)
       console.log(result);
 
       false && console.log('hello'); // Guard opperator (&&). Because first condition is false, code stops running early.
-      // shortcut to a if statment that is falsy: example if(false) { some code; }
-      const message = 5 && 'hello'; // shortcut to and if statment that delcares a variable outside of the scope and assigns it in the if statment scope if the condition is truthy
+      // shortcut to an if statment that is falsy: example if(false) { some code; }
+      const message = 5 && 'hello'; // shortcut to an if statment that delcares a variable outside of the scope and assigns it in the if statment scope if the condition is truthy
       console.log(message);
 
 
       //Default operator (||) stops early, aka short circuits because the first value is true so it doesnt check the second condition.
-      const currency = undefined || 'USD';
+      const currency = undefined || 'USD'; //Or operator can be used to set a default value
       console.log(currency);
+      // shortcut for an if statment:
+      /*
+        let currency;
+        if(!condition) {
+          currency = 'USD';
+        }
+      */
     </script>
   </body>
 </html>
