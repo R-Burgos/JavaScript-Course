@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+    <link rel="stylesheet" href="/css/06-booleans.css">
+  </head>
+  <body>
+    <script>
+      /*
+      true
+      false
+
+      console.log(3 > 5);
+
+      // == (!=) converts both into the same type then checks
+      console.log(5 == '5.00');
+
+      // === (!==) checks them as they are
+      console.log(5 === '5.00')
+
+      // comparison operators have lower priority in math
+      console.log(3 > 5 - 5);
+
+      if (false) {
+        console.log('hello');
+      } else {
+        console.log('else');
+      }
+
+      const age = 15;
+
+      if (age >= 16) {
+        console.log('You can drive');
+      } else if (age >= 14) {
+        console.log('Almost there!');
+      } else {
+        console.log('You can not drive');
+      }
+      */
+
+      /*
+      // logical operators have lower priority than comparison operators
+      console.log(true && false);
+      console.log(0.2 >= 0 && 0.2 < 1/3);
+
+      console.log(true || false);
+      console.log(!false);
+      */
+
+
+      //falsy: false 0 '' NaN undefined null
+      //truthy: anything not on the list above 
+      /*
+      if (0) {
+        console.log('truthy');
+      }
+
+      const cartQuantity = 5;
+
+      if(cartQuantity) {
+        console.log('cart has products');
+      }
+
+      console.log(!0);
+
+      console.log('text' / 5); // Nan = Not a number
+
+      let variable1;
+      console.log(variable1); // undefined
+      */
+
+
+      const result = 0 ? 'truthy' : 'falsy'; //ternariy operator (?)
+      console.log(result);
+
+      false && console.log('hello'); // Guard opperator (&&). Because first condition is false, code stops running early.
+      // shortcut to a if statment that is falsy: example if(false) { some code; }
+      const message = 5 && 'hello'; // shortcut to and if statment that delcares a variable outside of the scope and assigns it in the if statment scope if the condition is truthy
+      console.log(message);
+
+
+      //Default operator (||) stops early, aka short circuits because the first value is true so it doesnt check the second condition.
+      const currency = undefined || 'USD';
+      console.log(currency);
+    </script>
+  </body>
+</html>
