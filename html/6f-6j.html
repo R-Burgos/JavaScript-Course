@@ -12,10 +12,21 @@
       playGame('tails');
     ">tails</button>
     <script>
+       let score = {
+        wins: 0,
+        losses: 0
+       };
+
       function playGame(guess) {
         const ranNum = Math.random();
         const result = ranNum < 0.5 ? 'heads' : 'tails';
         console.log(result === guess ? 'You win!' : 'You lose!');
+        if(result === guess) {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        console.log(score);
       };
     </script>
   </body>
