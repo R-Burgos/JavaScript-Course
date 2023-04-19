@@ -12,22 +12,32 @@
       playGame('tails');
     ">tails</button>
     <script>
+      const scoreFlip = JSON.parse(localStorage.getItem('scoreFlip')) || {
+        wins: 0,
+        losses: 0
+      };
+      
+      /*
        let score = {
         wins: 0,
         losses: 0
        };
+      */
 
       function playGame(guess) {
         const ranNum = Math.random();
         const result = ranNum < 0.5 ? 'heads' : 'tails';
         console.log(result === guess ? 'You win!' : 'You lose!');
+
         if(result === guess) {
-          score.wins++;
+          scoreFlip.wins++;
         } else {
-          score.losses++;
+          scoreFlip.losses++;
         }
-        console.log(score);
-      };
+        console.log(scoreFlip);
+
+        localStorage.setItem('scoreFlip', JSON.stringify(scoreFlip));
+      }
     </script>
   </body>
 </html>
