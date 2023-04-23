@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 11a - 11c</title>
+  </head>
+  <body>
+    <script>
+      // 11a
+       const numbers = [10, 20 ,30]; 
+       numbers[2] = 99;
+       console.log(numbers);
+
+       // 11b
+       const array11B = [1, 20, 22, 24, 5];
+       const array11B2 = ['hi', 'hello', 'good'];
+       function getLastValue (array) {
+         const last = array.length - 1;
+         return array[last];
+       }
+       console.log(getLastValue(array11B));
+       console.log(getLastValue(array11B2));
+
+       // 11c
+       const array11C = [1, 20, 22, 24, 5];
+       const array11C2 = ['hi', 'hello', 'good'];
+       function arraySwap (array) {
+        const lastIndex = array.length - 1;
+        const first = array[0];
+        const last = array[lastIndex];
+        array[0] = last;
+        array[lastIndex] = first;
+        return array;
+       }
+       console.log(arraySwap(array11C));
+       console.log(arraySwap(array11C2));
+
+
+    </script>
+  </body>
+</html>
