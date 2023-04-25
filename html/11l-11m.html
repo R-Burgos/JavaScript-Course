@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 11l-11m</title>
+  </head>
+  <body>
+    <script>
+      // 11l
+      const arrayOne = [1,-3,5];
+      const arrayTwo = [-2,3,-5,7,10];
+      const arrayThree = [];
+      const arrayFour = [3];
+      
+
+      function minMax(nums) {
+        const result = {
+          min: null,
+          max: null
+        };
+        
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+        }
+
+        return result;
+      }
+
+      console.log(minMax(arrayOne));
+      console.log(minMax(arrayTwo));
+      console.log(minMax(arrayThree));
+      console.log(minMax(arrayFour));
+    </script>
+  </body>
+</html>
