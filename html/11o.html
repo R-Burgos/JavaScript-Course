@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 11o</title>
+  </head>
+  <body>
+    <script>
+      const arrayOne = ['hello','world','search','good'];
+      const arrayTwo = ['not','found'];
+
+      function indexFinder(array){
+        let index = -1;
+
+        for(let i = 0; i < array.length; i++){
+          if(array[i] === 'search'){
+            index = i;
+          }
+        }
+        console.log(index);
+      }
+      
+
+      indexFinder(arrayOne);
+      indexFinder(arrayTwo);
+    </script>
+  </body>
+</html>
