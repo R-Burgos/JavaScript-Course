@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 11v</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      for(let i = 1; i <= 20; i++){
+        nums[i] = i;
+      }
+      console.log(nums);
+
+      function fizzBuzz(nums){
+        for(let i = 0; i < nums.length; i++){
+          if(nums[i] % 3 === 0 && nums[i] % 5 === 0){
+            nums[i] = 'FizzBuzz';
+          } else if(nums[i] % 3 === 0){
+            nums[i] = 'Fizz';
+          } else if (nums[i] % 5 === 0){
+            nums[i] = 'Buzz';
+          }
+        }
+        console.log(nums);
+      }
+
+      fizzBuzz(nums);
+
+    </script>
+  </body>
+</html>
