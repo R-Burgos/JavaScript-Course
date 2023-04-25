@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 11q</title>
+  </head>
+  <body>
+    <script>
+      const arrayOne = ['green', 'red', 'blue', 'red'];
+      const wordToFind = {
+        one: 'red',
+        two: 'yellow'
+      };
+
+      function findIndex(array, word){
+        let index = -1;
+
+        for(let i = 0; i < array.length; i++){
+          if(array[i] === word){
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+      }
+
+      findIndex(arrayOne, wordToFind.one);
+      findIndex(arrayOne, wordToFind.two);
+    </script>
+  </body>
+</html>
