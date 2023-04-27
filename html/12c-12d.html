@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 12c-12d</title>
+    <style>
+      button{
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        padding: 15px;
+        border: none;
+      }
+
+      .start-button{
+        background-color: green;
+
+      }
+
+      .loading-button{
+        background-color: yellow;
+        color: black;
+      }
+
+      .finished-button{
+        background-color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button class="js-button start-button" onclick="
+      buttonChanger();
+    ">Start</button>
+    <script>
+
+      function buttonChanger() {
+        const button = document.querySelector('.js-button');
+        button.classList.remove('start-button');
+        button.innerHTML = "Loading..."
+        button.classList.add('loading-button');
+
+        setTimeout(function() {
+          button.innerHTML = 'Finished!';
+          button.classList.remove('loading-button');
+          button.classList.add('finished-button');
+
+            setTimeout(function() {
+              button.classList.remove('finished-button');
+              button.innerHTML = 'Start';
+              button.classList.add('start-button');
+            }, 2000);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
