@@ -9,10 +9,15 @@
     ">Add to cart</button>
     <p class="js-text-area"></p>
     <script>
+      let timeoutId;
+
       function displayText(){
         const textArea = document.querySelector('.js-text-area');
         textArea.innerHTML = 'Added';
-        setTimeout(function() {
+
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(function() {
           textArea.innerHTML = '';
         }, 2000);
       }
