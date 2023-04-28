@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 12e</title>
+  </head>
+  <body>
+    <button class="js-button" onclick="
+      displayText();
+    ">Add to cart</button>
+    <p class="js-text-area"></p>
+    <script>
+      function displayText(){
+        const textArea = document.querySelector('.js-text-area');
+        textArea.innerHTML = 'Added';
+        setTimeout(function() {
+          textArea.innerHTML = '';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
