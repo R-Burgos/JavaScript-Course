@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //FIZZBUZZ
+      /* 1-100
+      number % 3 === 0 >> FIZZ
+      number % 5 === 0 >> BUZZ
+      number % 3 && 5 === 0 >> FIZZBUZZ
+      number % 7 === 0 >> Bazz */
+
+
+      function FizzBuzz() {
+        for (let i = 1; i <= 100; i++) {
+
+          let word = "";
+
+          if( i % 3 === 0 ) {
+            word += 'Fizz';
+          }
+          if ( i % 5 === 0 ) {
+            word += 'Buzz';
+          }
+          if ( i % 7 === 0 ) {
+            word += 'Bazz';
+          }
+          
+          console.log(word || i);
+        }
+      }
+
+      FizzBuzz();
+    </script>
+  </body>
+</html>
