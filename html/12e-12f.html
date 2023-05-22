@@ -4,12 +4,16 @@
     <title>Exercise 12e</title>
   </head>
   <body>
-    <button class="js-button" onclick="
-      displayText();
-    ">Add to cart</button>
+    <button class="js-button js-button-event-listener">
+      Add to cart
+    </button>
     <p class="js-text-area"></p>
     <script>
       let timeoutId;
+
+      document.querySelector('.js-button-event-listener').addEventListener('click', () => {
+        displayText();
+      });
 
       function displayText(){
         const textArea = document.querySelector('.js-text-area');
@@ -17,7 +21,7 @@
 
         clearTimeout(timeoutId);
 
-        timeoutId = setTimeout(function() {
+        timeoutId = setTimeout(() => {
           textArea.innerHTML = '';
         }, 2000);
       }

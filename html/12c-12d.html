@@ -28,10 +28,14 @@
     </style>
   </head>
   <body>
-    <button class="js-button start-button" onclick="
-      buttonChanger();
-    ">Start</button>
+    <button class="js-button start-button js-button-event-listener">
+      Start
+    </button>
     <script>
+
+      document.querySelector('.js-button-event-listener').addEventListener('click', () => {
+        buttonChanger();
+      });
 
       function buttonChanger() {
         const button = document.querySelector('.js-button');
@@ -39,12 +43,12 @@
         button.innerHTML = "Loading..."
         button.classList.add('loading-button');
 
-        setTimeout(function() {
+        setTimeout(() => {
           button.innerHTML = 'Finished!';
           button.classList.remove('loading-button');
           button.classList.add('finished-button');
 
-            setTimeout(function() {
+            setTimeout(() => {
               button.classList.remove('finished-button');
               button.innerHTML = 'Start';
               button.classList.add('start-button');
