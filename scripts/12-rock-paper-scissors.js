@@ -195,7 +195,7 @@ function confirmationMessage() {
     if(event.key === 'n'){
       hideAlert();
     }
-});
+  });
 
 };
 
