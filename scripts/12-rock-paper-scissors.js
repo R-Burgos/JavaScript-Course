@@ -34,18 +34,16 @@ function autoPlay() {
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
+    document.querySelector('.auto-play-button').innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalID);
     isAutoPlaying = false;
+    document.querySelector('.auto-play-button').innerHTML = 'Auto Play';
   }
 }
 
 document.querySelector('.js-reset-score-button').addEventListener('click', () => {
-  score.wins = 0;
-  score. losses = 0;
-  score.ties = 0;
-  localStorage.removeItem('score');
-  updateScoreElement();
+  confirmationMessage();
 });
 
 document.querySelector('.js-auto-play-button').addEventListener('click', () => {
@@ -71,6 +69,18 @@ document.body.addEventListener('keydown', (event) => {
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
+  }
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if ( event.key === 'a' ) {
+    autoPlay();
+  }
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if ( event.key === 'b' ) {
+    confirmationMessage();
   }
 });
 
@@ -144,4 +154,52 @@ function pickComputerMove() {
     computerMove ='scissors';
   }
   return computerMove;
+};
+
+function resetScore() {
+  score.wins = 0;
+      score. losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+}
+
+function confirmationMessage() {
+  document.querySelector('.js-alert-reset')
+    .innerHTML = 
+      `<div class="alert">Are you sure you want to rest the score?</div>
+      <div>
+        <button class="yes-button">Yes</button>
+        <button class="no-button">No</button>
+      </div>`;
+
+  document.querySelector('.yes-button')
+    .addEventListener('click', () => {
+      resetScore();
+      hideAlert();
+  });
+
+  document.body.addEventListener('keydown', (event) => {
+      if(event.key === 'y'){
+        resetScore();
+        hideAlert();
+      }
+  });
+
+  document.querySelector('.no-button')
+    .addEventListener('click', () => {
+      hideAlert();
+  });
+
+  document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'n'){
+      hideAlert();
+    }
+});
+
+};
+
+function hideAlert() {
+  document.querySelector('.js-alert-reset')
+    .innerHTML = '';
 }
